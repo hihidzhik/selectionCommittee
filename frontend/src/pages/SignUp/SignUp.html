@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+  </head>
+    <body class="body"><link rel="stylesheet" href="SignUp.css">
+      <h1 class="h1">Регистрация</h1>
+      <form action="/register" method="POST" class="form">
+        <label class="label" for="name">Имя:</label>
+        <input class="input" type="text" id="name" name="name" required />
+  
+        <label class="label" for="surname">Фамилия:</label>
+        <input class="input" type="text" id="surname" name="surname" required />
+  
+        <label class="label" for="patronymic">Отчество:</label>
+        <input class="input" type="text" id="patronymic" name="patronymic" required />
+  
+        <label class="label" for="exams">Результаты экзаменов:</label>
+        <input class="input" type="file" id="exams" name="exams" accept=".pdf,.doc,.docx" required />
+  
+        <label class="label" for="specialty">Специальность для поступления:</label>
+        <select class="select" id="specialty" name="specialty" required>
+          <option value="" selected disabled>Выберите специальность</option>
+          <option value="1">Информационные технологии</option>
+          <option value="2">Экономика</option>
+          <option value="3">Психология</option>
+        </select>
+  
+        <label class="label" for="email">E-mail:</label>
+        <input class="input" type="email" id="email" name="email" required />
+  
+        <label class="label" for="password">Пароль:</label>
+        <input class="input" type="password" id="password"  name="password" minlength="6" required />
+  
+        <button class="button" type="submit">Зарегистрироваться</button>
+        <p class="form-link">Уже есть аккаунт? <a href="/src/pages/SignIn/SignIn.html">Войти</a></p>
+      </form>
+      </body>
+</html>
+      

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход</title>
+    <link rel="stylesheet" href="SignIn.css" />
+  </head>
+  <body class="body">
+    <h1 class="h1">Вход</h1>
+    <form class="form" action="login" method="POST">
+      <label class="label" for="email">E-mail:</label>
+      <input class="input" type="email" id="email" name="email" required />
+      <label class="label" for="password">Пароль:</label>
+      <input class="input" type="password" id="password" name="password" minlength="6" required />
+      <button class="button" type="submit">Войти</button>
+    </form>
+  </body>
+</html>
