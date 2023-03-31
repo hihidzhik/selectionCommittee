@@ -7,9 +7,9 @@
   </head>
     <body class="body"><link rel="stylesheet" href="SignUp.css">
       <h1 class="h1">Регистрация</h1>
-      <form action="/register" method="POST" class="form">
+      <form class="form" id="register">
         <label class="label" for="name">Имя:</label>
-        <input class="input" type="text" id="name" name="name" required />
+        <input class="input" type="text" id="name" name="name" required onchange="handleChange" />
   
         <label class="label" for="surname">Фамилия:</label>
         <input class="input" type="text" id="surname" name="surname" required />
@@ -33,10 +33,12 @@
   
         <label class="label" for="password">Пароль:</label>
         <input class="input" type="password" id="password"  name="password" minlength="6" required />
-  
+        <button class="showPasswordButton" id="showPasswordButton">Показать пароль</button>
         <button class="button" type="submit">Зарегистрироваться</button>
         <p class="form-link">Уже есть аккаунт? <a href="/src/pages/SignIn/SignIn.html">Войти</a></p>
       </form>
+      <script src="./SignUp.js">
+      </script>
       </body>
 </html>
       
