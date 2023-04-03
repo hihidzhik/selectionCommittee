@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <a class="return-home" href="/index.html?formSubmitted=true">На главную</a>
+    <title>Страница обратной связи</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Feedback.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="feedback__title" >Обратная связь</h1>
+    </header>
+    <main>
+      <form class="feedback__form" id="formfeedback">
+        <div>
+          <label  for="name">Имя:</label>
+          <input class="feedback__input" type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label  for="email">Email:</label>
+          <input class="feedback__input" type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label  for="message">Сообщение:</label>
+          <textarea class="feedback__textarea" id="message" name="message" required></textarea>
+        </div>
+        <button class="feedback__button" type="submit">Отправить</button>
+      </form>
+    </main>
+    <script src="./Feedback.js">
+    </script>
+  </body>
+</html>

@@ -11,9 +11,18 @@ const handleChange = (event) => {
     dataObject[event.target.id] = event.target.value;
   }
   
-const handleSubmit = (event) => {
+
+const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(dataObject);
+  
+    await fetch('http://localhost:3000/auth/sign-in', {
+      method: 'POST',
+      body: JSON.stringify(dataObject),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 
 emailElementInput.addEventListener("input", handleChange);

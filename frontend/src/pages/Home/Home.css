@@ -65,4 +65,75 @@ body {
     padding: 10px;
     text-align: center;
   }
+  .main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .main th,
+  .main td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .main th {
+    background-color: #f2f2f2;
+  }
+  .specialties {
+    margin-top: 50px;
+  }
+  
+  .specialties__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .specialties__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .specialties__item {
+    width: 30%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }  
+
+  .documents {
+    margin-top: 50px;
+  }
+
+  .documents__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .documents__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .documents__item {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .specialties__item-details {
+    display: none;
+  }
+  
+  .specialties__item-description {
+    display: none;
+  }
   
