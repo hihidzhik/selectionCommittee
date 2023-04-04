@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <a class="return-home" href="/index.html?formSubmitted=true">На главную</a>
     <title>Страница обратной связи</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="Feedback.css">
   </head>
   <body>
     <header>
+      <a class="return-home" href="/src/pages/Home/Home.html">На главную</a>
       <h1 class="feedback__title" >Обратная связь</h1>
     </header>
     <main>
@@ -24,7 +24,7 @@
           <label  for="message">Сообщение:</label>
           <textarea class="feedback__textarea" id="message" name="message" required></textarea>
         </div>
-        <button class="feedback__button" type="submit">Отправить</button>
+        <button class="feedback__button" type="submit" id="submit">Отправить</button>
       </form>
     </main>
     <script src="./Feedback.js">
