@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
@@ -13,7 +14,8 @@ const authRouter = require('./routes/auth');
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'http://localhost:5173',
+  credentials: true
 }));
 
 app.use(bodyParser.urlencoded({
@@ -25,6 +27,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(
+  session({
+    // name: 'authorization',
+    secret: 'some-secret-example',
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
+
+const requireAuth = (req, res, next) => {
+  if (!req.session.user) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+};
+
+app.get('/home', requireAuth, (req, res) => {
+  res.render('home', { username: req.session.user.username });
+});
+
 
 
 app.use('/', indexRouter);
@@ -52,5 +76,6 @@ app.use(function(err, req, res, next) {
 app.listen(3000, () => {
   console.log('Server is running on 3000 port');
 })
+
 
 module.exports = app;
