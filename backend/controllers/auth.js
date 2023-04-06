@@ -1,3 +1,8 @@
+const users = require('../constants/users');
+
+
+
+
 module.exports = {
     signUp(req, res) {
         console.log(req.body);
@@ -7,30 +12,34 @@ module.exports = {
     signIn(req, res) {
         const { email, password } = req.body;
 
-        if (email !== 'email@email.ru' || password !== 'password') {
-            res.status(401).send('Invalid username or password');
-            return;
-        }
+        console.log(email, password)
 
-        const user = {
-            id: 1,
+        const user = users.find(user => user.email === email && user.password === password);
+
+        console.log(user)
+
+        if (!user) {
+            res.status(401).send('Invalid email or password');
+            return;
         }
 
         req.session.regenerate(err => {
             if (err) throw err;
 
-            req.session.userId = user.id;
+            req.session.user = user;
 
             req.session.save(err => {
                 if (err) return next(err);
 
-                res.redirect('/users');
+                res.status(200).send('Ok');
             });
         });
     },
 
-    feedback(req, res) {
-        console.log(req.body);
-        res.send('respond with a resource');
-    }
+    whoAmI(req, res) {
+        res.status(200).send(req.session.user)
+        
+      },
+      
+    
 }

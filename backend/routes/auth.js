@@ -7,6 +7,6 @@ router.post('/sign-up', authRouter.signUp);
 
 router.post('/sign-in', authRouter.signIn);
 
-router.post('/feedback', authRouter.feedback);
+router.get('/whoami', authRouter.whoAmI);
 
 module.exports = router;
