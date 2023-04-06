@@ -13,3 +13,11 @@ specialties.forEach((specialty) => {
       }
     });
   });
+  const userEmail = '<%= email %>';
+  if (userEmail) {
+    document.getElementById('user-email').textContent = userEmail;
+  }
+
+  window.addEventListener("load", (event) => {
+    console.log('Отправить запрос на auth/whoami')
+  });
